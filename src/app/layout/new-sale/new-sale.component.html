@@ -1,0 +1,32 @@
+<div>
+    <div class="col-xl-4 card-new-sale" style="max-width: 330px;" *ngFor="let product of products">
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-header"><img class="card-img-top"
+                    src="https://www.helpconsult.com.br/wp-content/uploads/2018/06/timblack.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body" style="height: 180px;">
+                <h4 class="card-title">{{product.name_produto}}</h4>
+                <p class="card-text" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave"
+                    popoverTitle="Pop title">{{product.resumo}}</p>
+                <button type="button" class="btn btn-secondary" placement="right"
+                    ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                    popoverTitle="Popover on right">
+                    Popover on right
+                </button>
+            </div>
+            <div class="card-footer">
+                <div style="float: left">
+                    <i class="fa fa-dollar-sign"></i>
+                    <h4 class="card-title">R$ {{product.valor_venda}}</h4>
+                </div>
+                <div style="float: right; padding-right: 5px;">
+                    <a class="btn mt-1 imf-button" role="button"
+                        style="padding: .375rem 1rem !important;border-color:white;" (click)="insertCart(product)">
+                        <i class="fa fa-shopping-cart" style="padding-right: 2px;"></i>
+                        {{ 'Adicionar' | translate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

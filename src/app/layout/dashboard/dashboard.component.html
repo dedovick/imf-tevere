@@ -1,0 +1,29 @@
+<div [@routerTransition]>
+    <h2 class="text-muted">Dashboard <small>Statistics Overview</small></h2>
+    <hr>
+    <div class="row">
+        <div class="col-xl-3 col-lg-4" style="margin-bottom: 5px;">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa-usd'" [count]="10" [label]="'Total Vendas'"></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-4">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa-thumbs-o-up'" [count]="12" [label]="'Total Ativações'"></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-4">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa-usd'" [count]="124.00" [label]="'ARPU'">
+            </app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-4">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa fa-building-o'" [count]="13" [label]="'Pré Pago'"></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-4">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa fa-building-o'" [count]="13" [label]="'Recarga é Clara'"></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-4">
+            <app-stat [bgClass]="'secondary'" [icon]="'fa fa-building-o'" [count]="13" [label]="'T&B Pós Pago'"></app-stat>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+
+    </div>
+</div>
