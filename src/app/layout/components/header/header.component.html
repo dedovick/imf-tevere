@@ -9,15 +9,7 @@
             <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}">
         </form>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-none d-xl-block" *ngIf="!venda_ativa">
-                <a href="https://github.com/start-angular/SB-Admin-BS4-Angular-7/archive/master.zip"
-                    class="nav-link btn mt-1 imf-button" role="button"
-                    style="padding: .375rem 1rem !important;border-color:white;" (click)="alterarEstadoVenda(true);"
-                    [routerLink]="['/new-sale']" [routerLinkActive]="['router-link-active']">
-                    {{ 'Nova venda' | translate }}
-                </a>
-            </li> &nbsp;
-            <li class="nav-item d-none d-xl-block" *ngIf="venda_ativa">
+            <li class="nav-item d-none d-xl-block" *ngIf="cart.length > 0">
                 <a href="https://github.com/start-angular/SB-Admin-BS4-Angular-7/archive/master.zip"
                     class="nav-link btn mt-1 imf-button" role="button"
                     style="padding: .375rem 1rem !important;border-color:white;" (click)="open(content)"
@@ -81,14 +73,8 @@
                         class="badge badge-info" style="margin-left: 4px;">{{cart.length}}</span>
                 </a>
                 <div class="dropdown-menu-right" ngbDropdownMenu>
-                    <a href="javascript:void(0)" class="dropdown-item">
-                        {{ 'Pending Task' | translate }} <span class="badge badge-info">6</span>
-                    </a>
-                    <a href="javascript:void(0)" class="dropdown-item">
-                        {{ 'In queue' | translate }} <span class="badge badge-info"> 13</span>
-                    </a>
-                    <a href="javascript:void(0)" class="dropdown-item">
-                        {{ 'Mail' | translate }} <span class="badge badge-info"> 45</span>
+                    <a href="javascript:void(0)" class="dropdown-item" *ngFor='let item of cart'>
+                        {{ item.name_produto | translate }} <span (click)="removeItem(item)" class="badge badge-info" style="background-color: red;"><i class="fa fa-trash" style="padding-right: 2px; color: white;"></i></span>
                     </a>
             <li class="dropdown-divider"></li>
             <a href="javascript:void(0)" class="dropdown-item">

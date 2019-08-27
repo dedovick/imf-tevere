@@ -77,4 +77,8 @@ export class HeaderComponent implements OnInit {
             return  `with: ${reason}`;
         }
     }
+
+    removeItem(item: any) {
+        this.cart.splice(item, 1);
+    }
 }
