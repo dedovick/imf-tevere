@@ -53,7 +53,7 @@ export class HomeService {
                 {
                     displayName: 'Vendas',
                     iconName: 'fa-dashboard',
-                    route: 'cadastro/vendas'
+                    route: '/new-sale'
                 },
                 {
                     displayName: 'Produtos',

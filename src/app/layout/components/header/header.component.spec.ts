@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './header.component';
 import { LayoutModule } from '../../layout.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap' ;
+import { MatStepperModule } from '@angular/material/stepper';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -16,7 +18,10 @@ describe('HeaderComponent', () => {
         LayoutModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
-        NgbModule
+        NgbModule,
+        MatStepperModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
     })
     .compileComponents();

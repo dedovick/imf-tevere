@@ -4,12 +4,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatStepperModule } from '@angular/material/stepper';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
     imports: [
@@ -20,10 +23,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         LanguageTranslationModule,
         AppRoutingModule,
         BrowserAnimationsModule, NgbModule,
-        MatTabsModule
+        MatTabsModule,
+        MatStepperModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [AppComponent],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

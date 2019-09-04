@@ -1,3 +1,4 @@
+import { MatStepperModule } from '@angular/material/stepper';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -8,6 +9,8 @@ import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NewSaleComponent } from './new-sale/new-sale.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
     imports: [
@@ -15,7 +18,10 @@ import { NewSaleComponent } from './new-sale/new-sale.component';
         LayoutRoutingModule,
         TranslateModule,
         NgbDropdownModule,
-        NgbModule
+        NgbModule,
+        MatStepperModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [LayoutComponent, SidebarComponent, HeaderComponent, NewSaleComponent]
 })

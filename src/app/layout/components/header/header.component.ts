@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ProductsService } from 'src/app/service/products.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-header',
@@ -14,9 +15,12 @@ export class HeaderComponent implements OnInit {
     public cart: any[];
     public venda_ativa = false;
     closeResult: string;
+    isLinear = false;
+    firstFormGroup: FormGroup;
+    secondFormGroup: FormGroup;
 
     constructor(private translate: TranslateService, public router: Router, public productsService: ProductsService,
-        private modalService: NgbModal) {
+        private modalService: NgbModal, private _formBuilder: FormBuilder) {
 
         this.router.events.subscribe(val => {
             if (
@@ -32,6 +36,13 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         this.pushRightClass = 'push-right';
         this.cart = this.productsService.getCart();
+
+        this.firstFormGroup = this._formBuilder.group({
+            firstCtrl: ['', Validators.required]
+          });
+          this.secondFormGroup = this._formBuilder.group({
+            secondCtrl: ['', Validators.required]
+          });
     }
 
     isToggled(): boolean {
