@@ -12,6 +12,7 @@ import { AuthGuard } from './shared';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatStepperModule } from '@angular/material/stepper';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CdkStepperModule} from '@angular/cdk/stepper';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         FormsModule,
         ReactiveFormsModule
     ],
+    exports: [CdkStepperModule],
     declarations: [AppComponent],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

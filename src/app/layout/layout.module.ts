@@ -9,7 +9,11 @@ import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NewSaleComponent } from './new-sale/new-sale.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StepperComponent } from './components/modal/stepper/stepper.component';
+import {
+    MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule
+} from '@angular/material';
 
 
 @NgModule({
@@ -21,8 +25,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         NgbModule,
         MatStepperModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, NewSaleComponent]
+    exports: [MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule],
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, NewSaleComponent, StepperComponent]
 })
-export class LayoutModule {}
+export class LayoutModule { }

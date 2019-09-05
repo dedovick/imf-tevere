@@ -4,14 +4,24 @@
 @import "utils";
 @import "rtl";
 @import "responsive";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
 
 @media print {
-    .breadcrumb {
-        display: none !important;
-    }
+  .breadcrumb {
+    display: none !important;
+  }
 }
 
-.imf-button{
-    background-color: #17a2b8;
-    color: white !important;
+.imf-button {
+  background-color: #17a2b8;
+  color: white !important;
+  margin-right: 5px;
+}
+
+.mat-horizontal-stepper-header-container{
+    background-color: #2a3f54;
+}
+
+.mat-horizontal-content-container {
+    height: 80%;
 }

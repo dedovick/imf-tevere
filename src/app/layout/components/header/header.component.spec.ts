@@ -7,6 +7,8 @@ import { LayoutModule } from '../../layout.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap' ;
 import { MatStepperModule } from '@angular/material/stepper';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { StepperComponent } from '../modal/stepper/stepper.component';
+
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -21,7 +23,7 @@ describe('HeaderComponent', () => {
         NgbModule,
         MatStepperModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
       ],
     })
     .compileComponents();

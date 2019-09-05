@@ -1,0 +1,55 @@
+<mat-horizontal-stepper [linear]="true" style="height: 100%; background-color: white" class="stepper_controller" #stepper>
+    <mat-step>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Produtos</ng-template>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of cart" >
+                    {{item.name_produto}}
+                    <span (click)="removeItem(item)" class="badge badge-info"
+                            style="background-color: red;"><i class="fa fa-trash"
+                                style="padding-right: 2px; color: white;"></i></span>
+                </li>
+            </ul>
+            <div class="button-modal">
+                <button mat-button matStepperNext class="imf-button">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Cadastro</ng-template>
+            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div class="button-modal">
+                <button mat-button matStepperPrevious class="imf-button">Back</button>
+                <button mat-button matStepperNext class="imf-button">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Endereço</ng-template>
+        You are now done.
+        <div class="button-modal">
+            <button mat-button matStepperPrevious class="imf-button">Back</button>
+            <button mat-button matStepperNext class="imf-button">Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Pagamento</ng-template>
+        You are now done.
+        <div class="button-modal">
+            <button mat-button matStepperPrevious class="imf-button">Back</button>
+            <button mat-button matStepperNext class="imf-button">Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Finalizar</ng-template>
+        You are now done.
+        <div class="button-modal">
+            <button mat-button matStepperPrevious class="imf-button">Back</button>
+            <button mat-button (click)="stepper.reset()" class="imf-button">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
