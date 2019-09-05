@@ -14,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Provides fast, reliable and extensible starter for the development of Angular projects.
 
-`sb-admin-bs4-angular8` provides the following features:
+`IMF - Tevere` provides the following features:
 
 *   Developed using boostrap-v4.0.0
 *   angular-v8.0.0
